@@ -1,0 +1,152 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript"
+	src="/law/js/egovframework/com/cmm/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/law/js/god/law/date.js"></script>
+</head>
+<body>
+
+	<!-- <object width="700" height="600" align="center" id="HwpCtrl" classid="CLSID:BD9C32DE-3155-4691-8972-097D53B10052" style="left: 0px; top: 0px;"> -->
+	<object id="HwpCtrl"
+		classid="CLSID:BD9C32DE-3155-4691-8972-097D53B10052"
+		style="width: 50%; height: 90%;">
+		<!-- <PARAM NAME="_Version" VALUE="65538">
+			<PARAM NAME="_ExtentX" VALUE="18521">
+			<PARAM NAME="_ExtentY" VALUE="15875">
+			<PARAM NAME="_StockProps" VALUE="0">
+			<PARAM NAME="FILENAME" VALUE="">
+			<PARAM NAME="TOOLBAR_MENU" VALUE="0">
+			<PARAM NAME="TOOLBAR_STANDARD" VALUE="0">
+			<PARAM NAME="TOOLBAR_FORMAT" VALUE="0">
+			<PARAM NAME="TOOLBAR_DRAW" VALUE="0">
+			<PARAM NAME="TOOLBAR_TABLE" VALUE="0">
+			<PARAM NAME="TOOLBAR_IMAGE" VALUE="0">
+			<PARAM NAME="TOOLBAR_HEADER_FOOTER" VALUE="0">
+			<PARAM NAME="SHOW_TOOLBAR" VALUE="0">
+			<PARAM NAME="SHOW_STATUSBAR" VALUE="0">
+			<PARAM NAME="src" VALUE=""> -->
+	</object>
+
+	<ol>
+		<li>업체명: <input type="text" name="a1" id="a1" value="(주)케이디텍">
+		</li>
+		<li>허가번호: <input type="text" name="a2" id="a2"
+			value="214-88-60866">
+		</li>
+		<li>대표자: <input type="text" name="a3" id="a3" value="김남기">
+		</li>
+		<li>전화번호: <input type="text" name="a4" id="a4"
+			value="02-741-3378">
+		</li>
+		<li>주소지: <input type="text" name="a5" id="a5"
+			value="서울시 영등포구 영등포로 5길 19 동아프라임밸리 901~903호">
+		</li>
+	</ol>
+
+	<ol>
+		<li>한글: <input type="text" name="b1" id="b1" value="이백행">
+		</li>
+		<li>한자: <input type="text" name="b2" id="b2" value="李白行">
+		</li>
+		<li>영문: <input type="text" name="b3" id="b3"
+			value="Lee Baek Haeng">
+		</li>
+		<li>주민등록번호1: <input type="text" name="b4" id="b4" value="780224">
+		</li>
+		<li>주민등록번호2: <input type="text" name="b5" id="b5" value="1000000">
+		</li>
+		<li>국적2: <input type="text" name="b6" id="b6" value="대한민국">
+		</li>
+		<li>주 소: <input type="text" name="b7" id="b7"
+			value="대전광역시 유성구 지족북로 60(지족동, 한화꿈에그린 2블럭) 205-1501">
+		</li>
+		<li>취업(예정)직위: <input type="text" name="b8" id="b8" value="경비원">
+		</li>
+	</ol>
+
+	<ol>
+		<li>신청일: <input type="text" name="c1" id="c1" value="2020-02-19">
+		</li>
+		<li>신청인(대표자): <input type="text" name="c2" id="c2"
+			value="유미숙(김남기)">
+		</li>
+		<li>지방경찰청장(경찰서장): <input type="text" name="c3" id="c3" value="서울">
+		</li>
+
+		<li><input type="button" value="프린트" onclick="print()"></li>
+	</ol>
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							// Handler for .ready() called.
+
+							//boolean Open(string path, [string format], [string arg])
+							var HwpCtrl = document.getElementById('HwpCtrl');
+							HwpCtrl.RegisterModule("FilePathCheckDLL",
+									"FilePathCheckerModuleExample");
+
+							//HwpCtrl.Open('C:\\Users\\LeeBaekHaeng\\Downloads\\범죄경력조회 신청 서식(시설(기관)장신청).hwp');
+							//HwpCtrl.Open('C:/Users/LeeBaekHaeng/Downloads/범죄경력조회 신청 서식(시설(기관)장신청).hwp');
+							// 							HwpCtrl
+							// 									.Open(
+							// 											'http://localhost:8080/law/html/god/law/[별지 제13호의5서식] 범죄경력조회 신청서.hwp',
+							// 											'HWP');
+							HwpCtrl
+									.Open('http://localhost:8080/law/html/god/law/1.hwp');
+
+							//string GetFieldList([number number], [number option])
+							// 							alert(HwpCtrl.GetFieldList());
+							//alert(HwpCtrl.GetFieldList(0));
+							//alert(HwpCtrl.GetFieldList(1));
+							//alert(HwpCtrl.GetFieldList(2));
+
+							//string GetFieldText(string fieldlist)
+							// 							alert(HwpCtrl.GetFieldText('성명'));
+							//alert(HwpCtrl.GetFieldText('성명{{#1}}'));
+
+							//PutFieldText(string fieldlist, string textlist)
+							// 							alert(HwpCtrl.PutFieldText('성명', '이백행2'));
+
+							// 							alert(HwpCtrl.GetFieldText('성명'));
+
+							$('#c1').val(new Date().toString("yyyy년 M월 d일"));
+						});
+
+		function print() {
+			var HwpCtrl = document.getElementById('HwpCtrl');
+			HwpCtrl.PutFieldText('업체명', $('#a1').val());
+			HwpCtrl.PutFieldText('허가번호', $('#a2').val());
+			HwpCtrl.PutFieldText('대표자', $('#a3').val());
+			HwpCtrl.PutFieldText('전화번호', $('#a4').val());
+			HwpCtrl.PutFieldText('주소지', $('#a5').val());
+
+			HwpCtrl.PutFieldText('한글', $('#b1').val());
+			HwpCtrl.PutFieldText('한자', $('#b2').val());
+			HwpCtrl.PutFieldText('영문', $('#b3').val());
+			HwpCtrl.PutFieldText('주민등록번호1', $('#b4').val());
+			HwpCtrl.PutFieldText('주민등록번호2', $('#b5').val());
+			HwpCtrl.PutFieldText('국적', $('#b6').val());
+			HwpCtrl.PutFieldText('주  소', $('#b7').val());
+			HwpCtrl.PutFieldText('취업(예정)직위', $('#b8').val());
+
+			HwpCtrl.PutFieldText('신청일', $('#c1').val());
+			HwpCtrl.PutFieldText('신청인(대표자)', $('#c2').val());
+			HwpCtrl.PutFieldText('지방경찰청장(경찰서장)', $('#c3').val());
+
+			// 			HwpCtrl.PreviewCommand(10);
+
+			HwpCtrl.PrintDocument();
+
+			HwpCtrl
+					.SaveAs('C:/Users/LeeBaekHaeng/Desktop/[별지 제13호의5서식] 범죄경력조회 신청서_'
+							+ new Date().toString("yyyy-MM-dd")
+							+ '_'
+							+ $('#b1').val() + '.hwp');
+		}
+	</script>
+
+</body>
+</html>
