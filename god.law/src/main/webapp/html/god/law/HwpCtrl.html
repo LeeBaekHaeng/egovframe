@@ -73,6 +73,15 @@
 		</li>
 		<li>지방경찰청장(경찰서장): <input type="text" name="c3" id="c3" value="서울">
 		</li>
+	</ol>
+
+	<ol>
+		<!-- 		<li>회원 바탕 화면: <input type="text" name="d1" id="d1" -->
+		<!-- 			value="C:/Users/LeeBaekHaeng/Desktop/test"> -->
+		<!-- 		</li> -->
+		<li>회원 바탕 화면: <input type="text" name="d1" id="d1"
+			value="C:/Users/godsoft/Desktop/test">
+		</li>
 
 		<li><input type="button" value="프린트" onclick="print()"></li>
 	</ol>
@@ -94,8 +103,12 @@
 							// 									.Open(
 							// 											'http://localhost:8080/law/html/god/law/[별지 제13호의5서식] 범죄경력조회 신청서.hwp',
 							// 											'HWP');
+							// 							HwpCtrl
+							// 									.Open('http://localhost:8080/law/html/god/law/1.hwp');
 							HwpCtrl
-									.Open('http://localhost:8080/law/html/god/law/1.hwp');
+									.Open('http://godsoft.iptime.org:8080/law/html/god/law/1.hwp');
+							// 							HwpCtrl
+							// 									.Open('http://220.123.243.94:8080/law/html/god/law/1.hwp');
 
 							//string GetFieldList([number number], [number option])
 							// 							alert(HwpCtrl.GetFieldList());
@@ -140,11 +153,10 @@
 
 			HwpCtrl.PrintDocument();
 
-			HwpCtrl
-					.SaveAs('C:/Users/LeeBaekHaeng/Desktop/[별지 제13호의5서식] 범죄경력조회 신청서_'
-							+ new Date().toString("yyyy-MM-dd HH-mm-ss")
-							+ '_'
-							+ $('#b1').val() + '.hwp');
+			HwpCtrl.SaveAs($('#d1').val() + '/[별지 제13호의5서식] 범죄경력조회 신청서_'
+					+ new Date().toString("yyyy-MM-dd HH-mm-ss") + '_'
+					+ $('#b1').val() + '.hwp', 'HWP',
+					'lock:false;prvimage:2;prvtext:1');
 		}
 	</script>
 
