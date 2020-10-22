@@ -1,26 +1,26 @@
 # egovframe 3.9.0
 
-## mariadb-10.5.5-winx64
+1. mariadb-10.5.5-winx64
 
-### mariadb-install-db.exe 실행
+1.1 mariadb-install-db.exe 실행
 
 ```
 cd C:\EGOVFRAME390\mariadb-10.5.5-winx64\bin
 mariadb-install-db.exe
 ```
 
-### my.ini 수정
+1.2 my.ini 수정
 
 C:\EGOVFRAME390\mariadb-10.5.5-winx64\data\my.ini
 
-### mysqld.exe 실행
+1.3 mysqld.exe 실행
 
 ```
 cd C:\EGOVFRAME390\mariadb-10.5.5-winx64\bin
 mysqld.exe
 ```
 
-### MariaDB connection
+1.4 MariaDB connection
 ```
 Server Host: localhost
 Port: 3306
