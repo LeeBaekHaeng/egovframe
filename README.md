@@ -12,6 +12,12 @@ mariadb-install-db.exe
 ### 1.2 my.ini 수정
 
 C:\EGOVFRAME390\mariadb-10.5.5-winx64\data\my.ini
+```
+[mysqld]
+datadir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/data
+[client]
+plugin-dir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/lib/plugin
+```
 
 ### 1.3 mysqld.exe 실행
 
