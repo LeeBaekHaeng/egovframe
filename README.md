@@ -15,7 +15,10 @@ C:\EGOVFRAME390\mariadb-10.5.5-winx64\data\my.ini
 ```
 [mysqld]
 datadir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/data
+**port=3306
+**character-set-server=utf8
 [client]
+**port=3306
 plugin-dir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/lib/plugin
 ```
 
