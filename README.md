@@ -19,7 +19,7 @@ datadir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/data
 plugin-dir=C:/EGOVFRAME390/mariadb-10.5.5-winx64/lib/plugin
 ```
 
-mariadb-10.5.5-winx64.msi
+mariadb-10.5.5-winx64.msi  
 C:\Program Files\MariaDB 10.5\data\my.ini
 ```
 [mysqld]
@@ -32,7 +32,7 @@ port=3306
 plugin-dir=C:/Program Files/MariaDB 10.5/lib/plugin
 ```
 
-port=3306
+port=3306  
 character-set-server=utf8
 
 ### 1.3 mysqld.exe 실행
