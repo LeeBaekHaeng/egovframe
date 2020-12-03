@@ -24,7 +24,7 @@ public class CmmUseDAOTest_테스트 extends GodTestAbstract {
 		egovLogger.info("test");
 
 		ComDefaultCodeVO vo = new ComDefaultCodeVO();
-		vo.setCodeId("COM001-");
+		vo.setCodeId("COM001");
 
 		List<CmmnDetailCode> results = selectCmmCodeDetail(vo);
 
